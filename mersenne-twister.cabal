@@ -1,0 +1,56 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.3.
+--
+-- see: https://github.com/sol/hpack
+
+name:           mersenne-twister
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/juliagracedefoor/mersenne-twister#readme>
+homepage:       https://github.com/juliagracedefoor/mersenne-twister#readme
+bug-reports:    https://github.com/juliagracedefoor/mersenne-twister/issues
+author:         Julia DeFoor
+maintainer:     juliagracedefoor@gmail.com
+copyright:      Julia DeFoor
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/juliagracedefoor/mersenne-twister
+
+library
+  exposed-modules:
+      MT
+      StatefulMTGen
+  other-modules:
+      Paths_mersenne_twister
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , mtl
+    , random
+  default-language: Haskell2010
+
+test-suite mersenne-twister-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_mersenne_twister
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , hspec
+    , mersenne-twister
+    , mtl
+    , random
+  default-language: Haskell2010
