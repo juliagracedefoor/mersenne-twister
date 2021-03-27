@@ -13,8 +13,9 @@ main = do
       mts = word64s $ MT.fromSeed 5489
   hspec $ do
     describe "MT.hs" $ do
-      it "correctly matches up with the results located in \"5489.txt\"" $ do
-        and (zipWith (==) xs mts) `shouldBe` True
+      it "correctly matches up with the results located in \"cref/5489.txt\""
+        $ do
+            and (zipWith (==) xs mts) `shouldBe` True
 
 word64s :: RandomGen g => g -> [Word64]
 word64s = unfoldr (Just . genWord64)
