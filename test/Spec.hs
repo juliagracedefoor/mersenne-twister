@@ -1,4 +1,4 @@
-import qualified MT
+import qualified System.Random.MT              as MT
 import           Data.List                      ( unfoldr )
 import           Data.Maybe                     ( mapMaybe )
 import           Data.Word                      ( Word64 )
@@ -9,7 +9,7 @@ import           Test.Hspec
 main :: IO ()
 main = do
   contents <- readFile "cref/5489.txt"
-  let xs  = mapMaybe readMaybe . words $ contents :: [Word64]
+  let xs  = mapMaybe readMaybe . words $ contents
       mts = word64s $ MT.fromSeed 5489
   hspec $ do
     describe "MT.hs" $ do

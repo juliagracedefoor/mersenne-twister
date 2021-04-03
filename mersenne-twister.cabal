@@ -25,8 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      MT
-      StatefulMTGen
+      System.Random.MT
   other-modules:
       Paths_mersenne_twister
   hs-source-dirs:

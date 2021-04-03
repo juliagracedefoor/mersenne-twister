@@ -1,4 +1,4 @@
-module MT
+module System.Random.MT
   ( MTGen
   , new
   , fromSeed
