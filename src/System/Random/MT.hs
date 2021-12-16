@@ -7,22 +7,25 @@ where
 
 import           Control.Arrow                  ( Arrow((&&&)) )
 import           Data.Bits                      ( Bits
-                                                  ( xor
+                                                  ( complement
                                                   , shiftL
-                                                  , complement
+                                                  , shiftR
+                                                  , xor
                                                   , (.&.)
                                                   , (.|.)
-                                                  , shiftR
                                                   )
                                                 )
-import           Data.Sequence                  ( Seq((:|>), (:<|))
-                                                , (|>)
+import           Data.Sequence                  ( Seq((:<|), (:|>))
                                                 , (<|)
+                                                , (|>)
                                                 )
 import qualified Data.Sequence                 as Seq
 import           Data.Word                      ( Word64 )
 import           Numeric                        ( readHex )
-import           System.Random
+import           System.Random                  ( RandomGen(genWord64, split)
+                                                , getStdRandom
+                                                , uniform
+                                                )
 
 -- let's define an interface
 
